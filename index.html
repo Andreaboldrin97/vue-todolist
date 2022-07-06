@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="https://boolean.careers/favicon/favicon-16x16.png" type="image/x-icon">
-    <title>Document</title>
+    <title>MY notions</title>
     <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- FONT-AWESON -->
@@ -15,22 +15,74 @@
     
 </head>
 <body>
-    <div class="conteiner-fluid">
-        <div id="root" class="row">
-            <div class="col-6 justify-content-center offset-3">
-                <ul class="list-group m-5">
-                    <li class="list-group-item " v-for="(element , index) in todos" @click="invertedCheck(index)" :class="{ 'text-decoration-line-through': isCheck(element.done) }" >
-                        <i class="fa-solid fa-circle-xmark" @click="removeTodo(index)"></i> 
-                        {{ element.text }}
-                    </li>
-                </ul>
-                <div class="d-flex justify-content-center">
-                    <input type="text" v-model="newToDoElement" @keyup.enter="addNewToDoElement(newToDoElement)">
-                     <button class="btn btn-success m-1" @click="addNewToDoElement(newToDoElement)">AGGIUNGI</button>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="https://boolean.careers/?utm_source=google&utm_campaign=it_search_brand&utm_medium=cpc&utm_content=boolean&utm_term=boolean&gclid=Cj0KCQjw5ZSWB">
+                  <img class="img-logo" src="https://yt3.ggpht.com/ytc/AKedOLTO2XVhtyMr24Dnz6QJ-Lsj_05XHim-qMoF6PRc=s900-c-k-c0x00ffffff-no-rj" alt="">
+                </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                  <a class="nav-link active" aria-current="page" href="./calendario.html">Calendario</a>
+                  <a class="nav-link active" aria-current="page" href="./taskList.html"> Task list</a>
                 </div>
+              </div>
             </div>
-        </div>
-    </div> 
+          </nav>
+    </header>
+   <main>
+       <div class="container-fluid">
+           <div class="d-flex justify-content-center mt-5 col-sm-12">
+            <div id="carouselExampleCaptions" class="carousel slide carousel_container " data-bs-ride="false">
+                <div class="carousel-indicators icon">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner border border-dark">
+                  <div class="carousel-item active">
+                    <div class="content-corousel first_carousel_content">
+                      <img class="logo_corousel" src="https://www.simoneicardi.com/wp-content/uploads/2019/03/boolean.gif" alt="">
+                    </div>
+                    <div class="carousel-caption text-center m-5">
+                      <h5 class="text-dark"> Benvenuto in MYNOTIONS</h5>
+                      <p class="text-dark">Qui potrai annotare i tuoi appuntamenti sulcalendario o creare un task list per non dimenticare nulla</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item ">
+                    <img class="content-corousel" src="https://tuttotutorial.com/wp-content/uploads/2020/10/Calendar-Mac-Year-View.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>First slide label</h5>
+                      <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class="content-corousel" src="./img/Schermata 2022-07-06 alle 17.11.37.png" class="d-block w-100" alt="..">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>TASK LIST</h5>
+                      
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+           </div>
+       </div>
+   </main>
+
+   <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
 <!-- VUE SCRIPT -->
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>

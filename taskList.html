@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://boolean.careers/favicon/favicon-16x16.png" type="image/x-icon">
+     <!-- BOOTSTRAP -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+     <!-- FONT-AWESON -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+     <!-- MY CSS -->
+     <link rel="stylesheet" href="./css/style.css">
+    <title>MY notions</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="https://boolean.careers/?utm_source=google&utm_campaign=it_search_brand&utm_medium=cpc&utm_content=boolean&utm_term=boolean&gclid=Cj0KCQjw5ZSWB">
+                  <img class="img-logo" src="https://yt3.ggpht.com/ytc/AKedOLTO2XVhtyMr24Dnz6QJ-Lsj_05XHim-qMoF6PRc=s900-c-k-c0x00ffffff-no-rj" alt="">
+                </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                  <a class="nav-link active" aria-current="page" href="./calendario.html">Calendario</a>
+                  <a class="nav-link active" aria-current="page" href="./taskList.html"> Task list</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <div class="conteiner-fluid">
+        <div id="root" class="row">
+            <div class="col-6 justify-content-center offset-3">
+                <ul class="list-group m-5">
+                    <li class="list-group-item " v-for="(element , index) in todos" @click="invertedCheck(index)" :class="{ 'text-decoration-line-through': isCheck(element.done) }" >
+                        <i class="fa-solid fa-circle-xmark" @click="removeTodo(index)"></i> 
+                        {{ element.text }}
+                    </li>
+                </ul>
+                <div class="d-flex justify-content-center">
+                    <input type="text" v-model="newToDoElement" @keyup.enter="addNewToDoElement(newToDoElement)">
+                     <button class="btn btn-success m-1" @click="addNewToDoElement(newToDoElement)">AGGIUNGI</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+    <!-- VUE SCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<!-- MY JS SCRIPT -->
+<script src="./js/main.js"></script>
+</body>
+</html>
