@@ -44,20 +44,22 @@ const app = new Vue(
 
             addNewToDoElement : function (text){
                 if(!text == ''){
-                    this.todos.push({text});
+                    this.todos.push({text : text , done : false});
                 }
                 console.log(this.todos)
              this.newToDoElement = '';
             },
 
-            invertedCheck : function(){
-                this.todos.forEach((element , i) => {
-                    if(element.done == true){
-                        element.done = false
-                    }else{
-                        element.done = true
-                    }
-                });
+            invertedCheck : function(indexElement){
+                console.log(this.todos[indexElement].done)
+
+                // this.todos.forEach((element , i) => {
+                //     if(element.done == true){
+                //         element.done = false
+                //     }else{
+                //         element.done = true
+                //     }
+                // });
                 
                 // this.todos.forEach((element , i) => {
                 //     if(element[indexElement].done == true){
