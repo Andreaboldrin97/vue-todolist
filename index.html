@@ -19,14 +19,14 @@
         <div id="root" class="row">
             <div class="col-6 justify-content-center offset-3">
                 <ul class="list-group m-5">
-                    <li class="list-group-item " v-for="(element , index) in todos" :class="{ 'text-decoration-line-through': isCheck(element.done) }">
+                    <li class="list-group-item " v-for="(element , index) in todos" @click="invertedCheck(element.done)" :class="{ 'text-decoration-line-through': isCheck(element.done) }" >
                         <i class="fa-solid fa-circle-xmark" @click="removeTodo(index)"></i> 
                         {{ element.text }}
                     </li>
                 </ul>
                 <div class="d-flex justify-content-center">
-                    <input type="text">
-                <button class="btn btn-success m-1">AGGIUNGI</button>
+                    <input type="text" v-model="newToDoElement" @keyup.enter="addNewToDoElement(newToDoElement)">
+                     <button class="btn btn-success m-1" @click="addNewToDoElement(newToDoElement)">AGGIUNGI</button>
                 </div>
             </div>
         </div>
