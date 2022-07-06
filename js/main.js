@@ -51,7 +51,12 @@ const app = new Vue(
             },
 
             invertedCheck : function(indexElement){
-                console.log(this.todos[indexElement].done)
+                console.log(this.todos[indexElement].done);
+                if (this.todos[indexElement].done == true){
+                    this.todos[indexElement].done = false;
+                }else{
+                    this.todos[indexElement].done = true;
+                }
 
                 // this.todos.forEach((element , i) => {
                 //     if(element.done == true){
