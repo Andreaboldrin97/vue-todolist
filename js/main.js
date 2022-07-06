@@ -24,7 +24,12 @@ const app = new Vue(
                 if(done === true){
                     return true;
                 }
-            }
+            },
+
+            removeTodo : function(indexElement){
+                console.log(`hai clicato ${indexElement}`)
+                this.todos.splice(indexElement , 1);
+            },
         }
     }
 )
