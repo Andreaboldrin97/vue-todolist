@@ -27,6 +27,7 @@ const app = new Vue(
                 }
             ] ,
             newToDoElement : '',
+            toggleCheck : '',
             
         },
         methods : {
@@ -48,17 +49,31 @@ const app = new Vue(
                 console.log(this.todos)
              this.newToDoElement = '';
             },
-            invertedCheck : function(done){
-                if(done === true){
-                    done = false;
-                    this.isCheck(done);
-                }else{
-                    
-                    done = true
-                }
-                console.log(done)
-                return done
 
+            invertedCheck : function(){
+                this.todos.forEach((element , i) => {
+                    if(element.done == true){
+                        element.done = false
+                    }else{
+                        element.done = true
+                    }
+                });
+                
+                // this.todos.forEach((element , i) => {
+                //     if(element[indexElement].done == true){
+                //         element[indexElement].done = false
+                //     }else{
+                //         element[indexElement].done = true
+                //     }
+                // });
+                
+                // this.todos.forEach((element , i) => {
+                //     if(element[i].done == true){
+                //         element[i].done = false
+                //     }else{
+                //         element[it].done = true
+                //     }
+                // });
             },
         }
     }
